@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 import { registration } from '../../store/slices/authSlice';
 import '../Login/Login.css';
+import logoImage from '../../assets/Logo.png';
+import illustrasiLogin from '../../assets/Illustrasi-Login.png';
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({
@@ -46,7 +48,7 @@ const RegisterPage = () => {
             <div className="login-form-section">
                 <div className="login-header">
                     <div className="login-logo">
-                        <img src="/src/assets/Logo.png" alt="Logo" />
+                        <img src={logoImage} alt="Logo" />
                         <span>SIMS PPOB</span>
                     </div>
                     <h2>Lengkapi data untuk membuat akun</h2>
@@ -137,7 +139,7 @@ const RegisterPage = () => {
             </div>
 
             <div className="login-image-section">
-                <img src="/src/assets/Illustrasi-Login.png" alt="Illustration" />
+                <img src={illustrasiLogin} alt="Illustration" />
             </div>
         </div>
     );

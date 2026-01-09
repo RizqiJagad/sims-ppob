@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { login } from '../../store/slices/authSlice';
+import logoImage from '../../assets/Logo.png';
+import illustrasiLogin from '../../assets/Illustrasi-Login.png';
 import './Login.css';
 
 const LoginPage = () => {
@@ -28,7 +30,7 @@ const LoginPage = () => {
             <div className="login-form-section">
                 <div className="login-header">
                     <div className="login-logo">
-                        <img src="/src/assets/Logo.png" alt="Logo" />
+                        <img src={logoImage} alt="Logo" />
                         <span>SIMS PPOB</span>
                     </div>
                     <h2>Masuk atau buat akun untuk memulai</h2>
@@ -80,7 +82,7 @@ const LoginPage = () => {
             </div>
 
             <div className="login-image-section">
-                <img src="/src/assets/Illustrasi-Login.png" alt="Illustration" />
+                <img src={illustrasiLogin} alt="Illustration" />
             </div>
         </div>
     );
