@@ -135,7 +135,11 @@ Kami menerapkan **GitFlow Architecture** yang disiplin untuk menjaga stabilitas 
 
 - **`main`**: Branch produksi yang stabil (Protected).
 - **`develop`**: Branch utama integrasi sebelum rilis.
-- **`feature/*`**: Branch untuk pengembangan fitur spesifik (e.g., `feature/transaction`).
+- **`feature/*`**: Branch untuk pengembangan fitur spesifik:
+  - `feature/membership`
+  - `feature/information-and-banner`
+  - `feature/transaction-and-topup`
+  - `feature/verification-and-ui-polish`
 
 <br />
 
