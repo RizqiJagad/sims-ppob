@@ -24,7 +24,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="login-container">
+        <div className="login-container fade-in">
             <div className="login-form-section">
                 <div className="login-header">
                     <div className="login-logo">

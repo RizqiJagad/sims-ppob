@@ -25,7 +25,7 @@ const HomePage = () => {
     }, [dispatch]);
 
     return (
-        <div className="home-container">
+        <div className="home-container fade-in">
             <div className="home-top-section">
                 <ProfileHeader profile={profile} />
                 <BalanceWidget balance={balance} />

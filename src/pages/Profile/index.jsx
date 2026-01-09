@@ -92,7 +92,7 @@ const ProfilePage = () => {
         : '/src/assets/Profile-Photo.png';
 
     return (
-        <div className="profile-container">
+        <div className="profile-container fade-in">
             <div className="profile-content">
                 <div className="profile-image-section">
                     <div className="image-wrapper" onClick={handleImageClick}>
