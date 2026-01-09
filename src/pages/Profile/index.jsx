@@ -89,7 +89,7 @@ const ProfilePage = () => {
 
     const profileImage = profile?.profile_image && !profile.profile_image.includes('default')
         ? profile.profile_image
-        : '/src/assets/Profile Photo.png';
+        : '/src/assets/Profile-Photo.png';
 
     return (
         <div className="profile-container">

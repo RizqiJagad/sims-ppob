@@ -80,7 +80,7 @@ const LoginPage = () => {
             </div>
 
             <div className="login-image-section">
-                <img src="/src/assets/Illustrasi Login.png" alt="Illustration" />
+                <img src="/src/assets/Illustrasi-Login.png" alt="Illustration" />
             </div>
         </div>
     );
