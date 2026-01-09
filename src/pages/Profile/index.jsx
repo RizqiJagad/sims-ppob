@@ -37,7 +37,9 @@ const ProfilePage = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleEditToggle = () => {
+    const handleEditToggle = (e) => {
+        e && e.preventDefault && e.preventDefault();
+
         if (isEditMode) {
             // Cancel edit
             if (userProfile) {
