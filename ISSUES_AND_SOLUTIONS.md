@@ -87,6 +87,23 @@ Dokumen ini merangkum isu-isu teknis yang ditemui selama fase pengembangan dan d
 - **Solusi**:
   Mengupdate `README.md` secara berkala untuk mencerminkan kondisi riil repositori, mencantumkan branch fitur aktif seperti `feature/membership`, `feature/transaction-and-topup`, dll.
 
+### 2.4. Profil: Tidak Bisa Mengganti Nama (Form Reset)
+- **Gejala**: Saat mengedit profil, input nama seperti "langsung tersimpan" atau kembali ke nilai awal (reset) saat diketik, sehingga perubahan tidak bisa dilakukan atau terasa sulit.
+- **Penyebab**:
+  Logika sinkronisasi data pada `useEffect` di halaman Profile terlalu agresif. Setiap kali ada perubahan pada objek `userProfile` (misal karena re-fetch background), `useEffect` berjalan dan menimpa state form lokal dengan data lama dari database, menghapus ketikan user.
+- **Solusi**:
+  Menambahkan pengecekan kondisi `!isEditMode` pada `useEffect`. Sinkronisasi data dari database ke form HANYA boleh terjadi jika user SEDANG TIDAK dalam mode edit.
+  ```javascript
+  useEffect(() => {
+      // Data sync hanya jalan jika TIDAK sedang edit
+      if (!userProfile) {
+          dispatch(getProfile());
+      } else if (!isEditMode) { 
+          setFormData({ ...userProfile });
+      }
+  }, [userProfile, dispatch, isEditMode]);
+  ```
+
 ---
 
 ## Kesimpulan
