@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 import { registration, clearMessages } from '../../store/slices/authSlice';
-import '../Login/Login.css'; // Gunakan CSS yang sama untuk konsistensi
+import '../Login/Login.css'; 
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({

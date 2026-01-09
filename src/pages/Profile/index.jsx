@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Mail, User, ShieldCheck, Pencil, LogOut } from 'lucide-react';
 import { logout } from '../../store/slices/authSlice';
 import { updateProfile, updateProfileImage, getProfile } from '../../store/slices/profileSlice';
+import profilePlaceholder from '../../assets/Profile-Photo.png';
 import './Profile.css';
 
 const ProfilePage = () => {
@@ -81,22 +82,37 @@ const ProfilePage = () => {
         }
     };
 
+    const [imgSrc, setImgSrc] = useState(profilePlaceholder);
+
+    useEffect(() => {
+        if (profile?.profile_image && !profile.profile_image.includes('default')) {
+            setImgSrc(profile.profile_image);
+        } else {
+            setImgSrc(profilePlaceholder);
+        }
+    }, [profile]);
+
+    const handleImageError = () => {
+        setImgSrc(profilePlaceholder);
+    };
+
+
     const handleLogout = () => {
         if (window.confirm('Apakah anda yakin ingin logout?')) {
             dispatch(logout());
         }
     };
 
-    const profileImage = profile?.profile_image && !profile.profile_image.includes('default')
-        ? profile.profile_image
-        : '/src/assets/Profile-Photo.png';
-
     return (
         <div className="profile-container fade-in">
             <div className="profile-content">
                 <div className="profile-image-section">
                     <div className="image-wrapper" onClick={handleImageClick}>
-                        <img src={profileImage} alt="Profile" />
+                        <img
+                            src={imgSrc}
+                            alt="Profile"
+                            onError={handleImageError}
+                        />
                         <div className="edit-icon">
                             <Pencil size={14} />
                         </div>
