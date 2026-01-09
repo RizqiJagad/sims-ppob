@@ -39,6 +39,21 @@ Dokumen ini merangkum isu-isu teknis yang ditemui selama fase pengembangan dan d
   ```
   Ini menginstruksikan server untuk selalu mengirimkan `index.html` untuk semua request URL, membiarkan React Router mengambil alih rendering halaman yang tepat.
 
+### 1.3. Saldo "Nol" (Zero Balance) saat Refresh
+- **Gejala**: Saat melakukan Top Up, saldo bertambah dan tampil benar. Namun setelah melakukan refresh halaman di menu Transaction atau Top Up, saldo kembali menjadi `Rp 0` (atau loading terus menerus), padahal riwayat transaksi tercatat sukses.
+- **Penyebab (Analysis)**: 
+  Isu State Persistence. Pada Single Page Application, state Redux (penyimpanan data sementara di memori) akan hilang/reset saat browser di-refresh.
+  Halaman widget saldo (`BalanceWidget`) bergantung pada data `balance` di Redux. Halaman `Home` memiliki logika untuk mengambil (*fetch*) data saldo saat dimuat (`dispatch(getBalance)`), namun halaman `Transaction` dan `TopUp` **tidak memiliki** logika tersebut. Akibatnya, saat user langsung me-refresh di halaman tersebut, aplikasi tidak meminta data saldo terbaru ke server.
+- **Solusi**:
+  Menambahkan *lifecycle hook* (`useEffect`) pada **HistoryPage** dan **TopUpPage** untuk memicu pengambilan data profil dan saldo saat halaman tersebut dimuat (mounting).
+  ```javascript
+  useEffect(() => {
+      dispatch(getProfile());
+      dispatch(getBalance()); // <- Fetch saldo secara eksplisit
+      // ...
+  }, [dispatch]);
+  ```
+
 ---
 
 ## 2. Development & Quality Assurance Issues
