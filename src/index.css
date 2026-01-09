@@ -1,0 +1,39 @@
+/* Global CSS SIMS PPOB */
+:root {
+  --primary-color: #f42619;
+  --secondary-color: #ffffff;
+  --text-color: #333333;
+  --gray-color: #8a8a8a;
+  --border-color: #e5e5e5;
+  --success-color: #52bd94;
+  --font-family: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+  font-family: inherit;
+}

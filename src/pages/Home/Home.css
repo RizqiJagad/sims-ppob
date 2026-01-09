@@ -1,0 +1,30 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.home-top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 30px;
+}
+
+.banner-section {
+    margin-top: 50px;
+}
+
+.banner-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 992px) {
+    .home-top-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

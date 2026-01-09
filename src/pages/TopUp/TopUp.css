@@ -1,0 +1,76 @@
+.topup-section {
+    margin-top: 30px;
+}
+
+.topup-section p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.topup-section h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.topup-content {
+    display: flex;
+    gap: 30px;
+}
+
+.topup-form {
+    flex: 2;
+}
+
+.input-with-icon {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-color);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.preset-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.preset-item {
+    border: 1px solid var(--border-color);
+    background: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.preset-item:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .topup-content {
+        flex-direction: column;
+    }
+
+    .preset-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

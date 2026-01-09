@@ -1,0 +1,42 @@
+.balance-widget {
+    flex: 1.5;
+    background-color: var(--primary-color);
+    background-image: url('/src/assets/Background Saldo.png');
+    background-size: cover;
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.balance-content p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.balance-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.toggle-balance {
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.toggle-balance:hover {
+    opacity: 1;
+}
