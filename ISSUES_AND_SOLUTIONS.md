@@ -104,6 +104,16 @@ Dokumen ini merangkum isu-isu teknis yang ditemui selama fase pengembangan dan d
   }, [userProfile, dispatch, isEditMode]);
   ```
 
+  **Update (Final Fix)**:
+  - **Isu Tambahan**: Tombol "Edit Profile" terkadang memicu event `submit` form secara tidak sengaja di beberapa browser/konteks, menyebabkan profil "langsung tersimpan" sesaat setelah diklik.
+  - **Solusi**: Menambahkan `e.preventDefault()` eksplisit pada handler tombol Edit.
+  ```javascript
+  const handleEditToggle = (e) => {
+      e && e.preventDefault && e.preventDefault(); // Mencegah submit otomatis
+      // ... logic toggle
+  };
+  ```
+
 ---
 
 ## Kesimpulan
