@@ -58,6 +58,7 @@ const ProfilePage = () => {
             last_name: formData.last_name
         })).then((result) => {
             if (result.meta.requestStatus === 'fulfilled') {
+                dispatch(getProfile()); // Force refresh data from server
                 alert('Profil berhasil diperbaharui');
                 setIsEditMode(false);
             }
