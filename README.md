@@ -2,7 +2,7 @@
   <img src="src/assets/Logo.png" alt="SIMS PPOB Logo" width="120" height="auto" />
   <h1>SIMS PPOB</h1>
   <p>
-    <strong>Aplikasi Payment Point Online Bank Modern & Responsif</strong>
+    <strong>SIMS PPOB - Taqiy Rizqi Jagad Samudra</strong>
   </p>
   
   <p>
