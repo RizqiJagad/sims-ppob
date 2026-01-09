@@ -142,6 +142,6 @@ Kami menerapkan **GitFlow Architecture** yang disiplin untuk menjaga stabilitas 
 ---
 
 <div align="center">
-  <p>Dikembangkan dengan ❤️ oleh <strong>Rizqi Jagad</strong></p>
+  <p>Dikembangkan dengan  oleh <strong>Taqiy Rizqi Jagad Samudra</strong></p>
   <p><em>Take Home Test Implementation Project</em></p>
 </div>
