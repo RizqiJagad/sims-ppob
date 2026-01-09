@@ -9,6 +9,10 @@ Aplikasi Web PPOB (Payment Point Online Bank) yang dibangun menggunakan React.js
 - **Transaksi**: Top Up saldo dan Pembayaran berbagai layanan PPOB.
 - **Riwayat**: Daftar transaksi lengkap dengan fitur "Show More".
 
+## Tampilan Aplikasi
+
+![Tampilan Aplikasi](src/assets/Tampilan.png)
+
 ## Teknologi yang Digunakan
 
 - **Frontend Core**: React.js 18 + Vite
