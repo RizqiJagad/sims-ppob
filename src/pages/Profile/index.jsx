@@ -23,14 +23,14 @@ const ProfilePage = () => {
     useEffect(() => {
         if (!userProfile) {
             dispatch(getProfile());
-        } else {
+        } else if (!isEditMode) {
             setFormData({
                 email: userProfile.email,
                 first_name: userProfile.first_name,
                 last_name: userProfile.last_name || '',
             });
         }
-    }, [userProfile, dispatch]);
+    }, [userProfile, dispatch, isEditMode]);
     /* eslint-enable */
 
     const handleChange = (e) => {
