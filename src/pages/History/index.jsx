@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProfileHeader from '../Home/ProfileHeader';
 import BalanceWidget from '../Home/BalanceWidget';
 import { getHistory } from '../../store/slices/transactionSlice';
+import { getProfile } from '../../store/slices/profileSlice';
+import { getBalance } from '../../store/slices/balanceSlice';
 import './History.css';
 
 const HistoryPage = () => {
@@ -15,6 +17,8 @@ const HistoryPage = () => {
     const limit = 5;
 
     useEffect(() => {
+        dispatch(getProfile());
+        dispatch(getBalance());
         dispatch(getHistory({ limit, offset: 0 }));
     }, [dispatch]);
 

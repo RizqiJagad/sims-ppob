@@ -4,7 +4,9 @@ import { Banknote } from 'lucide-react';
 import ProfileHeader from '../Home/ProfileHeader';
 import BalanceWidget from '../Home/BalanceWidget';
 import { topUp, resetTransactionState } from '../../store/slices/transactionSlice';
+
 import { getBalance } from '../../store/slices/balanceSlice';
+import { getProfile } from '../../store/slices/profileSlice';
 import './TopUp.css';
 
 const TopUpPage = () => {
@@ -32,6 +34,8 @@ const TopUpPage = () => {
     };
 
     useEffect(() => {
+        dispatch(getProfile());
+        dispatch(getBalance());
         return () => dispatch(resetTransactionState());
     }, [dispatch]);
 
