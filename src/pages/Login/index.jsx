@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import { login, clearMessages } from '../../store/slices/authSlice';
+import { login } from '../../store/slices/authSlice';
 import './Login.css';
 
 const LoginPage = () => {

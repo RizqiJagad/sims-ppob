@@ -16,7 +16,7 @@ const PaymentPage = () => {
 
     const { data: profile } = useSelector((state) => state.profile);
     const { balance } = useSelector((state) => state.balance);
-    const { status, error } = useSelector((state) => state.transaction);
+    const { status } = useSelector((state) => state.transaction);
 
     useEffect(() => {
         if (!service) {

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
-import { registration, clearMessages } from '../../store/slices/authSlice';
-import '../Login/Login.css'; 
+import { registration } from '../../store/slices/authSlice';
+import '../Login/Login.css';
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ const RegisterPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { status, error, message } = useSelector((state) => state.auth);
+    const { status, error } = useSelector((state) => state.auth);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,7 +27,8 @@ const RegisterPage = () => {
             return;
         }
 
-        const { confirm_password, ...regData } = formData;
+        const regData = { ...formData };
+        delete regData.confirm_password;
         dispatch(registration(regData)).then((result) => {
             if (result.meta.requestStatus === 'fulfilled') {
                 alert(result.payload.message || 'Registrasi berhasil!');

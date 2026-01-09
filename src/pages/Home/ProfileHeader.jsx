@@ -3,24 +3,18 @@ import profilePlaceholder from '../../assets/Profile-Photo.png';
 import './ProfileHeader.css';
 
 const ProfileHeader = ({ profile }) => {
-    const [imgSrc, setImgSrc] = React.useState(profilePlaceholder);
-
-    React.useEffect(() => {
-        if (profile?.profile_image && !profile.profile_image.includes('default')) {
-            setImgSrc(profile.profile_image);
-        } else {
-            setImgSrc(profilePlaceholder);
-        }
-    }, [profile]);
-
-    const handleImageError = () => {
-        setImgSrc(profilePlaceholder);
+    const handleImageError = (e) => {
+        e.target.src = profilePlaceholder;
     };
+
+    const displayImage = profile?.profile_image && !profile.profile_image.includes('default')
+        ? profile.profile_image
+        : profilePlaceholder;
 
     return (
         <div className="profile-header">
             <img
-                src={imgSrc}
+                src={displayImage}
                 alt="Profile"
                 className="profile-img"
                 onError={handleImageError}

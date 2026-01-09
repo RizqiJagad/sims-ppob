@@ -82,20 +82,13 @@ const ProfilePage = () => {
         }
     };
 
-    const [imgSrc, setImgSrc] = useState(profilePlaceholder);
-
-    useEffect(() => {
-        if (profile?.profile_image && !profile.profile_image.includes('default')) {
-            setImgSrc(profile.profile_image);
-        } else {
-            setImgSrc(profilePlaceholder);
-        }
-    }, [profile]);
-
-    const handleImageError = () => {
-        setImgSrc(profilePlaceholder);
+    const handleImageError = (e) => {
+        e.target.src = profilePlaceholder;
     };
 
+    const displayImage = profile?.profile_image && !profile.profile_image.includes('default')
+        ? profile.profile_image
+        : profilePlaceholder;
 
     const handleLogout = () => {
         if (window.confirm('Apakah anda yakin ingin logout?')) {
@@ -109,7 +102,7 @@ const ProfilePage = () => {
                 <div className="profile-image-section">
                     <div className="image-wrapper" onClick={handleImageClick}>
                         <img
-                            src={imgSrc}
+                            src={displayImage}
                             alt="Profile"
                             onError={handleImageError}
                         />

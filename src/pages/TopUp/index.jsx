@@ -14,7 +14,7 @@ const TopUpPage = () => {
     const dispatch = useDispatch();
     const { data: profile } = useSelector((state) => state.profile);
     const { balance } = useSelector((state) => state.balance);
-    const { status, error, message } = useSelector((state) => state.transaction);
+    const { status } = useSelector((state) => state.transaction);
 
     const isInvalid = amount < 10000 || amount > 1000000;
 
