@@ -30,7 +30,7 @@
 
 ---
 
-## ✨ Fitur Utama
+## <a id="fitur-utama"></a>✨ Fitur Utama
 
 <table>
   <tr>
@@ -65,7 +65,7 @@
 
 <br />
 
-## 📸 Tampilan Aplikasi
+## <a id="tampilan-aplikasi"></a>📸 Tampilan Aplikasi
 
 <div align="center">
   <img src="src/assets/Tampilan.png" alt="Screenshot Dashboard SIMS PPOB" width="100%" style="border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
@@ -74,7 +74,7 @@
 
 <br />
 
-## 🛠 Teknologi
+## <a id="teknologi"></a>🛠 Teknologi
 
 Project ini dibangun menggunakan stack modern untuk menjamin performa dan kemudahan pengembangan:
 
@@ -89,7 +89,7 @@ Project ini dibangun menggunakan stack modern untuk menjamin performa dan kemuda
 
 <br />
 
-## 🚀 Instalasi & Menjalankan
+## <a id="instalasi"></a>🚀 Instalasi & Menjalankan
 
 Ikuti langkah berikut untuk menjalankan proyek di komputer lokal Anda:
 
@@ -129,7 +129,7 @@ Ikuti langkah berikut untuk menjalankan proyek di komputer lokal Anda:
 
 <br />
 
-## 🌿 GitFlow Structure
+## <a id="gitflow"></a>🌿 GitFlow Structure
 
 Kami menerapkan **GitFlow Architecture** yang disiplin untuk menjaga stabilitas kode:
 
