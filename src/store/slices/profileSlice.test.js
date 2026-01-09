@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import profileReducer, { getProfile, updateProfile } from './profileSlice';
 
 // Mock async thunks partially if needed, but for reducer logic we test state changes primarily

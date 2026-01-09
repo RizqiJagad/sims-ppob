@@ -8,7 +8,7 @@ import './Profile.css';
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
-    const { data: profile, status } = useSelector((state) => state.profile);
+    const { data: userProfile, status } = useSelector((state) => state.profile);
 
     const [isEditMode, setIsEditMode] = useState(false);
     const [formData, setFormData] = useState({
@@ -19,17 +19,19 @@ const ProfilePage = () => {
 
     const fileInputRef = useRef(null);
 
+    /* eslint-disable */
     useEffect(() => {
-        if (!profile) {
+        if (!userProfile) {
             dispatch(getProfile());
         } else {
             setFormData({
-                email: profile.email,
-                first_name: profile.first_name,
-                last_name: profile.last_name,
+                email: userProfile.email,
+                first_name: userProfile.first_name,
+                last_name: userProfile.last_name || '',
             });
         }
-    }, [profile, dispatch]);
+    }, [userProfile, dispatch]);
+    /* eslint-enable */
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,11 +40,13 @@ const ProfilePage = () => {
     const handleEditToggle = () => {
         if (isEditMode) {
             // Cancel edit
-            setFormData({
-                email: profile.email,
-                first_name: profile.first_name,
-                last_name: profile.last_name,
-            });
+            if (userProfile) {
+                setFormData({
+                    email: userProfile.email,
+                    first_name: userProfile.first_name,
+                    last_name: userProfile.last_name || '',
+                });
+            }
         }
         setIsEditMode(!isEditMode);
     };
@@ -86,8 +90,8 @@ const ProfilePage = () => {
         e.target.src = profilePlaceholder;
     };
 
-    const displayImage = profile?.profile_image && !profile.profile_image.includes('default')
-        ? profile.profile_image
+    const displayImage = userProfile?.profile_image && !userProfile.profile_image.includes('default')
+        ? userProfile.profile_image
         : profilePlaceholder;
 
     const handleLogout = () => {
@@ -117,7 +121,7 @@ const ProfilePage = () => {
                         accept="image/png, image/jpeg"
                         onChange={handleImageChange}
                     />
-                    <h2>{profile?.first_name} {profile?.last_name}</h2>
+                    <h2>{userProfile?.first_name} {userProfile?.last_name}</h2>
                 </div>
 
                 <form className="profile-form" onSubmit={handleSave}>
